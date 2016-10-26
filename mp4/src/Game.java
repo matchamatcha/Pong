@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 public class Game extends JPanel {
 	
 	Ball ball = new Ball(this);
-	Racquet racquet = new Racquet(this, 1,120); // a new racquet at the x coordinate 0 and y coordinate , 120
+	Racquet racquet = new Racquet(this, 1,120); // a new racquet at the x coordinate 1 and y coordinate , 120
 	Racquet racquet2 = new Racquet(this, 340,120); // another racquet where we reuse the Racquet class
 	int speed = 1; 
 	static boolean start = true;
@@ -44,7 +44,7 @@ public class Game extends JPanel {
 		Sound.BACK.loop();
 	}
 	
-	//called whenever needed to move the sprites
+	//to move the sprites
 	private void move() {
 		ball.move();
 		racquet.move();
@@ -54,7 +54,7 @@ public class Game extends JPanel {
 	@Override
 	public void paint(Graphics g) { //renders the sprites to the screen
 		
-		super.paint(g);
+		super.paint(g); //so we won't get a straight line ot traces, when an object moves
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, 400, 500);
 		
@@ -72,9 +72,9 @@ public class Game extends JPanel {
 		//punctuation for scores
 		g2d.setColor(Color.BLUE);
 		g2d.setFont(new Font("Verdana", Font.BOLD, 16));
-		g2d.drawString("P1: "+String.valueOf(racquet.getScore()), 10, 320); //displays score of players
-        g2d.drawString("P2: "+String.valueOf(racquet2.getScore()), 10, 60); // at x = 10, y = 60
-        //da moves
+		g2d.drawString("P1: "+String.valueOf(racquet.getScore()), 10, 320); //displays scores of players at the given coordinates
+        g2d.drawString("P2: "+String.valueOf(racquet2.getScore()), 10, 60); 
+        //guide
         g2d.setColor(Color.GRAY);
         g2d.setFont(new Font("Verdana", Font.BOLD, 10));
         g2d.drawString("A, D, & Z", 0, 10);
@@ -86,7 +86,6 @@ public class Game extends JPanel {
 	public void gameOver() {
 		Sound.BACK.stop(); //the bgm stops
 		Sound.GAMEOVER.play(); //game over badii
-		//shows a message when game over
 
 		int choice; //to display the winner + retry option
 		if (racquet.getScore() >= racquet2.getScore())	{																															
@@ -118,7 +117,7 @@ public class Game extends JPanel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		start = true;
 		while(start == true){
-			game.move();
+			game.move();  //updates position
 			game.repaint();
 			Thread.sleep(10);
 			//limit score
