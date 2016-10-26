@@ -41,7 +41,7 @@ public class Game extends JPanel {
 		});
 		
 		setFocusable(true); //if deactivated racquets will not move
-		Sound.BACK.loop();
+		Sound.BACK.loop(); //loops bgm
 	}
 	
 	//to move the sprites
