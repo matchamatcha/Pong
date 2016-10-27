@@ -74,8 +74,8 @@ public class Game extends JPanel {
 		//punctuation for scores
 		g2d.setColor(Color.BLUE);
 		g2d.setFont(new Font("Verdana", Font.BOLD, 12));
-		g2d.drawString("P1: "+String.valueOf(racquet.getScore()), 240, 196); //displays score of players at (x,y) coords
-        g2d.drawString("P2: "+String.valueOf(racquet2.getScore()), 240, 176); 
+		g2d.drawString("P2: "+String.valueOf(racquet2.getScore()), 240, 176); //displays score of players at (x,y) coords
+        g2d.drawString("P1: "+String.valueOf(racquet.getScore()), 240, 196); 
         //keys to be pressed for each player
         g2d.setColor(Color.GRAY);
         g2d.setFont(new Font("Verdana", Font.BOLD, 9));
