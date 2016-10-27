@@ -103,7 +103,7 @@ public class Game extends JPanel {
 			racquet.setScore(0); //resets the scores
 			racquet2.setScore(0);
 			speed = 1;
-			//ball = new Ball(this);
+			ball = new Ball(this);
 		}
 		
 	}
