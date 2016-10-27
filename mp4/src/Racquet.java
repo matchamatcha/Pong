@@ -17,7 +17,7 @@ public class Racquet {
 	public Racquet(Game game) {
 		this.game = game;
 	}
-	public Racquet(Game game, int Y, int x) { //overloaded constructor
+	public Racquet(Game game, int x, int Y) { //overloaded constructor
 		this.game = game;
 		this.x = x;
 		this.Y = Y;
